@@ -1,0 +1,13 @@
+services:
+  postgres:
+    image: postgres:14.18
+    environment:
+      POSTGRES_DB: "postgres"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - "/home/se/Documents/dotnet/dbs/dbServStat/docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d"
+      - "/home/se/Documents/dotnet/dbs/dbServStat/data:/var/lib/postgresql/data"
+      - "/home/se/Documents/dotnet/dbs/dbServStat/scripts:/home/postgres/Documents"
+    ports:
+      - "5432:5432"
